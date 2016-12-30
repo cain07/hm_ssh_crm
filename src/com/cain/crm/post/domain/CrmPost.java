@@ -6,6 +6,11 @@ import java.util.Set;
 import com.cain.crm.department.domain.CrmDepartment;
 import com.cain.crm.staff.domain.CrmStaff;
 
+/**
+ * 职务
+ * @author cain
+ *
+ */
 public class CrmPost {
 	/*
 	 * CREATE TABLE `crm_post` (

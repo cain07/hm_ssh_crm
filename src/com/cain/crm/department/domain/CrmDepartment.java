@@ -5,6 +5,11 @@ import java.util.Set;
 
 import com.cain.crm.post.domain.CrmPost;
 
+/**
+ *  部门
+ * @author cain
+ *
+ */
 public class CrmDepartment {
 	
 	private String depId;

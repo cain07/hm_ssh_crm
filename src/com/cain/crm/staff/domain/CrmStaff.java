@@ -4,7 +4,11 @@ import java.util.Date;
 
 import com.cain.crm.post.domain.CrmPost;
 
-
+/**
+ * 员工表
+ * @author cain
+ *
+ */
 public class CrmStaff {
 	/*
 	 * CREATE TABLE `crm_staff` (
