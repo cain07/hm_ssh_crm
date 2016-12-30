@@ -1,7 +1,7 @@
 package com.cain.crm.staff.web.action;
 
 import com.cain.crm.staff.domain.CrmStaff;
-import com.cain.crm.staff.service.StaffServic;
+import com.cain.crm.staff.service.StaffService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -16,14 +16,14 @@ public class StaffAction extends ActionSupport implements ModelDriven<CrmStaff> 
 		return staff ;
 	}
 	
-	private StaffServic staffServic;
+	private StaffService staffService;
 	
-	public void setStaffServic(StaffServic staffServic) {
-		this.staffServic = staffServic;
+	public void setStaffService(StaffService staffService) {
+		this.staffService = staffService;
 	}
 
 	public String login(){
-		CrmStaff crmStaff = staffServic.login(staff);
+		CrmStaff crmStaff = staffService.login(staff);
 		if (crmStaff != null) {
 			//成功
 			// 3.1 session作用域保存数据

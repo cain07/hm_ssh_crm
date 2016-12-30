@@ -12,8 +12,8 @@ public class StaffDaoImpl extends HibernateDaoSupport implements StaffDao{
 	@Override
 	public CrmStaff find(String username, String password) {
 		// TODO Auto-generated method stub
-		List<CrmStaff> staffs = this.getHibernateTemplate().find("from crmStaff where loginName = ? and loginPwd = ? ", username,password);
-		if (staffs.size() > 0) {
+		List<CrmStaff> staffs = this.getHibernateTemplate().find("from CrmStaff where loginName = ? and loginPwd = ? ", username,password);
+		if (staffs.size() > 0) {                                
 			return staffs.get(0);
 		}
 		return null;
