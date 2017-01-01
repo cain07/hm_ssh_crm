@@ -12,6 +12,26 @@
 	<!-- 2 公共项 -->
 	<package name="common" namespace="/" extends="struts-default">
 	
+		<interceptors>
+			<interceptor name="loginIntercepter" class="com.cain.crm.web.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="loginStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="loginIntercepter">
+					<param name="excludeMethods">login</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- @3)声明默认 -->
+		<default-interceptor-ref name="loginStack"></default-interceptor-ref>
+		
+		<global-results>
+			<result name="login">/WEB-INF/pages/login.jsp</result>
+		</global-results>
+		
+		<action name="uiAction_*_*" >
+			<result name="success">/WEB-INF/pages/{1}/{2}.jsp</result>
+		</action>
 	</package>
 	
 	

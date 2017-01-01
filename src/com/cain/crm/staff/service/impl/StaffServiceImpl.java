@@ -3,6 +3,7 @@ package com.cain.crm.staff.service.impl;
 import com.cain.crm.staff.dao.StaffDao;
 import com.cain.crm.staff.domain.CrmStaff;
 import com.cain.crm.staff.service.StaffService;
+import com.cain.crm.utils.MyStringUtils;
 
 public class StaffServiceImpl implements StaffService {
 
@@ -11,7 +12,8 @@ public class StaffServiceImpl implements StaffService {
 	@Override
 	public CrmStaff login(CrmStaff crmStaff) {
 		// TODO Auto-generated method stub
-		return staffDao.find(crmStaff.getLoginName(), crmStaff.getLoginPwd());
+		String LoginPwd = MyStringUtils.getMD5Value(crmStaff.getLoginPwd());
+		return staffDao.find(crmStaff.getLoginName(), LoginPwd);
 	}
 
 	public void setStaffDao(StaffDao staffDao) {
