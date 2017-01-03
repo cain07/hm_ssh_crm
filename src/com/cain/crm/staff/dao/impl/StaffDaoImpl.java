@@ -9,6 +9,7 @@ import com.cain.crm.staff.domain.CrmStaff;
 
 public class StaffDaoImpl extends HibernateDaoSupport implements StaffDao{
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public CrmStaff find(String username, String password) {
 		// TODO Auto-generated method stub
@@ -17,6 +18,13 @@ public class StaffDaoImpl extends HibernateDaoSupport implements StaffDao{
 			return staffs.get(0);
 		}
 		return null;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CrmStaff> findAllStaff() {
+		// TODO Auto-generated method stub
+		return this.getHibernateTemplate().find("from CrmStaff");
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.cain.crm.staff.web.action;
 
+import java.util.List;
+
 import com.cain.crm.staff.domain.CrmStaff;
 import com.cain.crm.staff.service.StaffService;
 import com.opensymphony.xwork2.ActionContext;
@@ -32,6 +34,12 @@ public class StaffAction extends ActionSupport implements ModelDriven<CrmStaff> 
 		}
 		this.addFieldError("", "用户名与密码不匹配");
 		return "login";
+	}
+	
+	public String findAllStaff(){
+		List<CrmStaff> staffs = staffService.findAllStaff();
+		ActionContext.getContext().put("allStaff", staffs);
+		return "stafflist";
 	}
 	
 	/**

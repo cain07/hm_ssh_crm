@@ -1,5 +1,7 @@
 package com.cain.crm.staff.service.impl;
 
+import java.util.List;
+
 import com.cain.crm.staff.dao.StaffDao;
 import com.cain.crm.staff.domain.CrmStaff;
 import com.cain.crm.staff.service.StaffService;
@@ -18,6 +20,12 @@ public class StaffServiceImpl implements StaffService {
 
 	public void setStaffDao(StaffDao staffDao) {
 		this.staffDao = staffDao;
+	}
+
+	@Override
+	public List<CrmStaff> findAllStaff() {
+		// TODO Auto-generated method stub
+		return staffDao.findAllStaff();
 	}
 
 }

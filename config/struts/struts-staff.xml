@@ -12,6 +12,8 @@
 			<!-- <result name="login">/WEB-INF/pages/login.jsp</result> -->
 			<!-- 3 首页 -->
 			<result name="home">/WEB-INF/pages/frame.jsp</result>
+			
+			<result name="stafflist">/WEB-INF/pages/staff/listStaff.jsp</result>
 		</action>
 	</package>
 	

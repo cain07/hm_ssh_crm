@@ -87,6 +87,16 @@ public class CrmStaff {
 	public void setPost(CrmPost post) {
 		this.post = post;
 	}
+
+	@Override
+	public String toString() {
+		return "CrmStaff [staffId=" + staffId + ", loginName=" + loginName
+				+ ", loginPwd=" + loginPwd + ", staffName=" + staffName
+				+ ", gender=" + gender + ", onDutyDate=" + onDutyDate
+				+ ", post=" + post + "]";
+	}
+	
+	
 	
 	
 	
