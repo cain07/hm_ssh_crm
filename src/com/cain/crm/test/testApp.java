@@ -8,6 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.cain.crm.department.domain.CrmDepartment;
+import com.cain.crm.department.service.DepartmentService;
+import com.cain.crm.post.domain.CrmPost;
+import com.cain.crm.post.service.PostService;
 import com.cain.crm.staff.domain.CrmStaff;
 import com.cain.crm.staff.service.StaffService;
 
@@ -18,6 +22,12 @@ public class testApp {
 	
 	@Autowired
 	private StaffService staffService;
+	
+	@Autowired
+	private DepartmentService departmentService;
+	
+	@Autowired
+	private PostService postService;
 	
 	@Test
 	public void test01() {
@@ -33,5 +43,26 @@ public class testApp {
 		
 		CrmStaff staffs = staffService.login(staff);
 		System.out.println(staffs.toString());
+	}
+	
+	@Test
+	public void test03() {
+		CrmStaff staffs = staffService.findbyStaffId("2c9091c14c78e58b014c78e7ecd90034");
+		System.out.println(staffs.toString());
+	}
+	
+	@Test
+	public void test04() {
+		List<CrmDepartment> departments = departmentService.findAll();
+		System.out.println(departments.toString());
+	}
+	
+	@Test
+	public void test05() {
+		CrmDepartment department = new CrmDepartment();
+		department.setDepId("2c9091c14c78e58b014c78e67de10001");
+		department.setDepName("java学院");
+		List<CrmPost> list = postService.findAll(department);
+		System.out.println(list.toString());
 	}
 }

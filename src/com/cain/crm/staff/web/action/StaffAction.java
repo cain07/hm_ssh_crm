@@ -2,6 +2,8 @@ package com.cain.crm.staff.web.action;
 
 import java.util.List;
 
+import com.cain.crm.department.domain.CrmDepartment;
+import com.cain.crm.department.service.DepartmentService;
 import com.cain.crm.staff.domain.CrmStaff;
 import com.cain.crm.staff.service.StaffService;
 import com.opensymphony.xwork2.ActionContext;
@@ -19,6 +21,12 @@ public class StaffAction extends ActionSupport implements ModelDriven<CrmStaff> 
 	}
 	
 	private StaffService staffService;
+	
+	private DepartmentService departmentService;
+	
+	public void setDepartmentService(DepartmentService departmentService) {
+		this.departmentService = departmentService;
+	}
 	
 	public void setStaffService(StaffService staffService) {
 		this.staffService = staffService;
@@ -42,6 +50,17 @@ public class StaffAction extends ActionSupport implements ModelDriven<CrmStaff> 
 		return "stafflist";
 	}
 	
+	public String editUI(){
+		CrmStaff crmStaff = this.staffService.findbyStaffId(staff.getStaffId());
+		ActionContext.getContext().getValueStack().push(crmStaff);
+		
+		//2 查询所有部门
+		List<CrmDepartment> allDepartment = departmentService.findAll();
+		// * jsp页面通过“key”获得
+		ActionContext.getContext().getValueStack().set("allDepartment",allDepartment);
+		return "editUI";
+	}
+	
 	/**
 	 * 显示首页
 	 * @return
@@ -49,6 +68,8 @@ public class StaffAction extends ActionSupport implements ModelDriven<CrmStaff> 
 	public String home(){
 		return "home";
 	}
+
+	
 
 
 }

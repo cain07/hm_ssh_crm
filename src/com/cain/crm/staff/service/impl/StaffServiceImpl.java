@@ -28,4 +28,10 @@ public class StaffServiceImpl implements StaffService {
 		return staffDao.findAllStaff();
 	}
 
+	@Override
+	public CrmStaff findbyStaffId(String staffId) {
+		// TODO Auto-generated method stub
+		return staffDao.findByStaffId(staffId);
+	}
+
 }

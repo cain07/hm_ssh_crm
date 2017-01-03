@@ -1,6 +1,7 @@
 package com.cain.crm.staff.dao.impl;
 
 import java.util.List;
+import javax.persistence.criteria.From;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
@@ -25,6 +26,12 @@ public class StaffDaoImpl extends HibernateDaoSupport implements StaffDao{
 	public List<CrmStaff> findAllStaff() {
 		// TODO Auto-generated method stub
 		return this.getHibernateTemplate().find("from CrmStaff");
+	}
+
+	@Override
+	public CrmStaff findByStaffId(String StaffId) {
+		// TODO Auto-generated method stub
+		return this.getHibernateTemplate().get(CrmStaff.class, StaffId);
 	}
 
 }

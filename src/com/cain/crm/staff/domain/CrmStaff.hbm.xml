@@ -17,6 +17,6 @@
 		</property>
 		
 		<!-- 多对一：多个员工 属于 【一个职务】 -->
-		<many-to-one name="post" class="com.cain.crm.post.domain.CrmPost" column="postId"></many-to-one>
+		<many-to-one name="post" lazy="false" class="com.cain.crm.post.domain.CrmPost" column="postId"></many-to-one>
 	</class>
 </hibernate-mapping>

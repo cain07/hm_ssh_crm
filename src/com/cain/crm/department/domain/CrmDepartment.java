@@ -42,6 +42,5 @@ public class CrmDepartment {
 		this.postSet = postSet;
 	}
 	
-	
 
 }

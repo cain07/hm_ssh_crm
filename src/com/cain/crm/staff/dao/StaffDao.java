@@ -9,4 +9,6 @@ public interface StaffDao {
 	public CrmStaff find(String username,String password);
 	
 	public List<CrmStaff> findAllStaff();
+	
+	public CrmStaff findByStaffId(String StaffId);
 }
