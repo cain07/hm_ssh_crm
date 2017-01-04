@@ -38,27 +38,26 @@
 
 
 <%--条件查询 start --%>
-
-<form action="${pageContext.request.contextPath}/coursetype/courseTypeAction_findAll.action" method="post">
+<s:form action="courseTypeAction_getAllCourseType" namespace="/">
 	<table width="88%" border="0" class="emp_table" style="width:80%;">
 	  <tr>
 	    <td width="10%">课程类别：</td>
-	    <td><input type="text" name="courseName" size="30" value="" /></td>
+	    <td><s:textfield name="courseName" size="30"></s:textfield></td>
 	  </tr>
 	  <tr>
 	    <td >课程简介：</td>
-	    <td > <input type="text" name="remark" size="30" value="" /></td>
+	    <td><s:textfield name="remark" size="30"></s:textfield></td>
 	  </tr>
 	  <tr>  
 	    <td >总学时：</td>
-	    <td ><input type="text" name="totalStart" size="12" value="" />  至  <input type="text" name="totalEnd" size="12" value="" /></td>
+	    <td><s:textfield name="totalStart" size="12"></s:textfield> 至 <s:textfield name="totalEnd" size="12"></s:textfield></td>
 	  </tr>
 	  <tr>
 	    <td>课程费用：</td>
-	    <td ><input type="text" name="lessonCostStart" size="12" value="" /> 至 <input type="text" name="lessonCostEnd" size="12" value="" /></td>
+	    <td><s:textfield name="courseCostStart" size="12"></s:textfield> 至 <s:textfield name="courseCostEnd" size="12"></s:textfield></td>
 	  </tr>
 	</table>
-</form>
+	</s:form>
 
 <%--条件查询 end --%>
 
@@ -67,6 +66,8 @@
     <td ><img src="${pageContext.request.contextPath}/images/result.gif"/></td>
   </tr>
 </table>
+
+
 <table width="97%" border="1" >
   
   <tr class="henglan" style="font-weight:bold;">
@@ -90,6 +91,7 @@
 	  </tr>
  </s:iterator>
 </table>
+
 <table border="0" cellspacing="0" cellpadding="0" align="center">
   <tr>
     <td align="right">

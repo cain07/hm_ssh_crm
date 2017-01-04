@@ -7,4 +7,6 @@ import com.cain.crm.coursetype.domain.CrmCourseType;
 public interface CoursetypeService {
 
 	public List<CrmCourseType> findAll();
+	
+	public List<CrmCourseType> findAll(CrmCourseType crmCourseType);
 }

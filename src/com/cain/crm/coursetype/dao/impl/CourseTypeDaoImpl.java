@@ -16,4 +16,11 @@ public class CourseTypeDaoImpl extends HibernateDaoSupport implements CourseType
 		return this.getHibernateTemplate().find("from CrmCourseType");
 	}
 
+	@Override
+	public List<CrmCourseType> findAll(String condition, Object[] param) {
+		// TODO Auto-generated method stub
+		String hql = "from CrmCourseType where 1=1 " + condition;
+		return this.getHibernateTemplate().find(hql, param);
+	}
+
 }

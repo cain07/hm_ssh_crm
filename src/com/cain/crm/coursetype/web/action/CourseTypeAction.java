@@ -24,7 +24,7 @@ public class CourseTypeAction extends ActionSupport implements ModelDriven<CrmCo
 	}
 	
 	public String getAllCourseType(){
-		List<CrmCourseType> courseTypes = coursetypeService.findAll();
+		List<CrmCourseType> courseTypes = coursetypeService.findAll(courseType);
 		ActionContext.getContext().put("courseTypes", courseTypes);
 		return "allCourseType";
 	}
