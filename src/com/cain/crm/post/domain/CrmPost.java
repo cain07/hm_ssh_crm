@@ -61,5 +61,5 @@ public class CrmPost {
 	public void setStaffSet(Set<CrmStaff> staffSet) {
 		this.staffSet = staffSet;
 	}
-
+	
 }

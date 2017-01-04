@@ -34,4 +34,19 @@ public class StaffServiceImpl implements StaffService {
 		return staffDao.findByStaffId(staffId);
 	}
 
+	@Override
+	public void updateStaff(CrmStaff staff) {
+		// TODO Auto-generated method stub
+		CrmStaff findByStaffId = staffDao.findByStaffId(staff.getStaffId());
+		findByStaffId.setGender(staff.getGender());
+		findByStaffId.setLoginName(staff.getLoginName());
+		if (!findByStaffId.getLoginPwd().equals(staff.getLoginPwd())) {
+			findByStaffId.setLoginPwd(staff.getLoginPwd());
+		}
+		
+		findByStaffId.setOnDutyDate(staff.getOnDutyDate());
+		findByStaffId.setStaffName(staff.getStaffName());
+		findByStaffId.setPost(staff.getPost());
+	}
+
 }

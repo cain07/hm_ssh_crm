@@ -70,6 +70,11 @@ public class StaffAction extends ActionSupport implements ModelDriven<CrmStaff> 
 	}
 
 	
+	public String edit(){
+		staffService.updateStaff(staff);
+		return "edit";
+	}
+	
 
 
 }
