@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.cain.crm.coursetype.domain.CrmCourseType;
+import com.cain.crm.coursetype.service.CoursetypeService;
 import com.cain.crm.department.domain.CrmDepartment;
 import com.cain.crm.department.service.DepartmentService;
 import com.cain.crm.post.domain.CrmPost;
@@ -28,6 +30,9 @@ public class testApp {
 	
 	@Autowired
 	private PostService postService;
+	
+	@Autowired
+	private CoursetypeService coursetypeService;
 	
 	@Test
 	public void test01() {
@@ -64,5 +69,11 @@ public class testApp {
 		department.setDepName("java学院");
 		List<CrmPost> list = postService.findAll(department);
 		System.out.println(list.toString());
+	}
+	
+	@Test
+	public void test06() {
+		List<CrmCourseType> departments = coursetypeService.findAll();
+		System.out.println(departments.toString());
 	}
 }
