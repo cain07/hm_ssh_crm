@@ -2,20 +2,9 @@ package com.cain.crm.coursetype.dao;
 
 import java.util.List;
 
+import com.cain.crm.base.BaseDao;
 import com.cain.crm.coursetype.domain.CrmCourseType;
 
-public interface CourseTypeDao {
-
-	public List<CrmCourseType> findAll();
+public interface CourseTypeDao extends BaseDao<CrmCourseType>{
 	
-	public List<CrmCourseType> findAll(String condition,Object[] param);
-	
-	public CrmCourseType findById(String courseTypeId);
-
-	public void saveOrUpdate(CrmCourseType courseType);
-
-	public int getTotalRecord(String condition, Object[] params);
-
-	public List<CrmCourseType> findAll(String condition,
-			Object[] params, int startIndex, int pageSize);
 }
