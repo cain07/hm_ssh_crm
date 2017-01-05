@@ -195,6 +195,18 @@ public class CrmClasses {
 	public void setCourseType(CrmCourseType courseType) {
 		this.courseType = courseType;
 	}
+
+
+	@Override
+	public String toString() {
+		return "CrmClasses [classId=" + classId + ", name=" + name
+				+ ", beginTime=" + beginTime + ", endTime=" + endTime
+				+ ", status=" + status + ", totalCount=" + totalCount
+				+ ", upgradeCount=" + upgradeCount + ", changeCount="
+				+ changeCount + ", runoffCount=" + runoffCount + ", remark="
+				+ remark + ", uploadTime=" + uploadTime + ", uploadPath="
+				+ uploadPath + ", uploadFilename=" + uploadFilename + "]";
+	}
 	
 	
 

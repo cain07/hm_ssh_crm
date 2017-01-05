@@ -115,5 +115,16 @@ public class CrmCourseType {
 		this.courseCostEnd = courseCostEnd;
 	}
 
+	@Override
+	public String toString() {
+		return "CrmCourseType [courseTypeId=" + courseTypeId + ", courseCost="
+				+ courseCost + ", total=" + total + ", courseName="
+				+ courseName + ", remark=" + remark + ", totalStart="
+				+ totalStart + ", totalEnd=" + totalEnd + ", courseCostStart="
+				+ courseCostStart + ", courseCostEnd=" + courseCostEnd
+				+ ", classesSet=" + classesSet + "]";
+	}
+
+	
 	
 }

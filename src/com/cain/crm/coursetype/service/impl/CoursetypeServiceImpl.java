@@ -3,7 +3,8 @@ package com.cain.crm.coursetype.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
+
 
 import com.cain.crm.coursetype.dao.CourseTypeDao;
 import com.cain.crm.coursetype.domain.CrmCourseType;
@@ -71,6 +72,19 @@ public class CoursetypeServiceImpl implements CoursetypeService {
 		//System.out.println(params.toString());
 
 		return courseTypeDao.findAll(condition, params);
+	}
+
+	@Override
+	public CrmCourseType findById(String courseTypeId) {
+		// TODO Auto-generated method stub
+		return this.courseTypeDao.findById(courseTypeId);
+	}
+
+	@Override
+	public void saveOrUpdate(CrmCourseType courseType) {
+		// TODO Auto-generated method stub
+		System.out.println("CoursetypeServiceImpl"+courseType.toString());
+		this.courseTypeDao.saveOrUpdate(courseType);
 	}
 
 }

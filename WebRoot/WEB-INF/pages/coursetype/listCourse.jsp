@@ -28,8 +28,9 @@
 			<img src="${pageContext.request.contextPath}/images/button/gaojichaxun.gif" />
 		</a>      
     	<%--编辑前：添加类别 --%>
-    	<a href="${pageContext.request.contextPath}/pages/coursetype/addOrEditCourse.jsp">
-	       	<img src="${pageContext.request.contextPath}/images/button/tianjia.gif" />
+    	<s:a namespace="/" action="courseTypeAction_editUI" >
+    	<img src="${pageContext.request.contextPath}/images/button/tianjia.gif" />
+    	</s:a>
     	</a>
     </td>
     <td width="3%" align="right"><img src="${pageContext.request.contextPath}/images/tright.gif"/></td>
@@ -85,8 +86,12 @@
 	    <td align="center"><s:property value="total"/></td>
 	    <td align="center"><s:property value="courseCost"/></td>
 	  	<td width="11%" align="center">
+	  	
+	  		<s:a namespace="/" action="courseTypeAction_editUI" >
+	  		 <s:param name="courseTypeId" value="courseTypeId"></s:param>
+	  		 <img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img" />
+	  		</s:a>
 	  		
-	  		<a href="${pageContext.request.contextPath}/pages/coursetype/addOrEditCourse.jsp"><img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img" /></a>
 	  	</td>
 	  </tr>
  </s:iterator>

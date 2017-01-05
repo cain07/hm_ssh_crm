@@ -7,6 +7,12 @@
 	<package name="cour" namespace="/" extends="common">
 		<action name="courseTypeAction_*" class="com.cain.crm.coursetype.web.action.CourseTypeAction" method="{1}">
 			<result name="allCourseType">/WEB-INF/pages/coursetype/listCourse.jsp</result>
+			<result name="editUI">/WEB-INF/pages/coursetype/addOrEditCourse.jsp</result>
+			
+			<result name="addOrEdit" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">courseTypeAction_getAllCourseType</param>
+			</result>
 		</action>
 	</package>
 	
