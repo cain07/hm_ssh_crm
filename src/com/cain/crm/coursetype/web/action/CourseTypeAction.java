@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.cain.crm.coursetype.domain.CrmCourseType;
 import com.cain.crm.coursetype.service.CoursetypeService;
+import com.cain.crm.page.PageBean;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -15,6 +16,16 @@ public class CourseTypeAction extends ActionSupport implements ModelDriven<CrmCo
 	private CrmCourseType courseType = new CrmCourseType();
 	
 	private CoursetypeService coursetypeService;
+
+	private int pageNum = 1;
+	public void setPageNum(int pageNum) {
+		this.pageNum = pageNum;
+	}
+	
+	private int pageSize = 2;
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
 	public void setCoursetypeService(CoursetypeService coursetypeService) {
 		this.coursetypeService = coursetypeService;
 	}
@@ -26,8 +37,10 @@ public class CourseTypeAction extends ActionSupport implements ModelDriven<CrmCo
 	}
 	
 	public String getAllCourseType(){
-		List<CrmCourseType> courseTypes = coursetypeService.findAll(courseType);
-		ActionContext.getContext().put("courseTypes", courseTypes);
+		//List<CrmCourseType> courseTypes = coursetypeService.findAll(courseType);
+		
+		PageBean<CrmCourseType>  pageBean = coursetypeService.findAll(courseType,pageNum,pageSize);
+		ActionContext.getContext().put("pageBean", pageBean);
 		return "allCourseType";
 	}
 	
