@@ -54,7 +54,8 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T>{
 	@Override
 	public List<T> findAll() {
 		// TODO Auto-generated method stub
-		return this.getHibernateTemplate().find("from"+beanClass.getClass());
+		return this.getHibernateTemplate().find("from " + beanClass.getName());
+	
 	}
 
 

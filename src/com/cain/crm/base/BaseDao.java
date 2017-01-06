@@ -12,6 +12,7 @@ public interface BaseDao<T> {
 	public void saveOrUpdate(T t);
 	
 	public T findById(java.io.Serializable id);
+	
 	public List<T> findAll();
 	
 	/**

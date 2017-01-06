@@ -2,6 +2,7 @@ package com.cain.crm.base;
 
 import java.lang.reflect.ParameterizedType;
 
+import com.cain.crm.classes.service.ClassesService;
 import com.cain.crm.coursetype.service.CoursetypeService;
 import com.cain.crm.department.service.DepartmentService;
 import com.cain.crm.post.service.PostService;
@@ -12,6 +13,10 @@ import com.opensymphony.xwork2.ModelDriven;
 
 public class BaseAction<T> extends ActionSupport implements ModelDriven<T>{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private T t;
 	@Override
 	public T getModel() {
@@ -61,21 +66,21 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T>{
 		}
 		
 		//课程类别
-		private CoursetypeService courseTypeService;
-		public void setCourseTypeService(CoursetypeService courseTypeService) {
-			this.courseTypeService = courseTypeService;
+		private CoursetypeService coursetypeService;
+		public void setCoursetypeService(CoursetypeService coursetypeService) {
+			this.coursetypeService = coursetypeService;
 		}
-		public CoursetypeService getCourseTypeService() {
-			return courseTypeService;
+		public CoursetypeService getCoursetypeService() {
+			return coursetypeService;
 		}
 		//班级
-//		private ClassesService classesService;
-//		public void setClassesService(ClassesService classesService) {
-//			this.classesService = classesService;
-//		}
-//		public ClassesService getClassesService() {
-//			return classesService;
-//		}
+		private ClassesService classesService;
+		public void setClassesService(ClassesService classesService) {
+			this.classesService = classesService;
+		}
+		public ClassesService getClassesService() {
+			return classesService;
+		}
 		
 		//3 分页数据
 		private int pageNum = 1;

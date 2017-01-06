@@ -26,15 +26,14 @@ public class CourseTypeAction extends BaseAction<CrmCourseType> {
 	
 	public String getAllCourseType(){
 		//List<CrmCourseType> courseTypes = coursetypeService.findAll(courseType);
-		
-		PageBean<CrmCourseType>  pageBean = this.getCourseTypeService().findAll(this.getModel(),pageNum,pageSize);
+		PageBean<CrmCourseType>  pageBean = this.getCoursetypeService().findAll(this.getModel(),pageNum,pageSize);
 		put("pageBean", pageBean);
 		return "allCourseType";
 	}
 	
 	public String editUI(){
 		if (StringUtils.isNotBlank(this.getModel().getCourseTypeId())) {
-			CrmCourseType findCourseType = getCourseTypeService().findById(this.getModel().getCourseTypeId());
+			CrmCourseType findCourseType = getCoursetypeService().findById(this.getModel().getCourseTypeId());
 			push(findCourseType);
 		}
 		return "editUI";
@@ -42,7 +41,7 @@ public class CourseTypeAction extends BaseAction<CrmCourseType> {
 	
 	public String addOrEdit(){
 		System.out.println(this.getModel().toString());
-		getCourseTypeService().saveOrUpdate(this.getModel());
+		getCoursetypeService().saveOrUpdate(this.getModel());
 		return "addOrEdit";
 	}
 
