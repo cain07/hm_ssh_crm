@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -32,21 +33,23 @@
   </tr>
 </table>
 
-<form action="/crm2/classesm/classAction_upload.action" method="post" enctype="multipart/form-data">
+<s:form namespace="/" action="classesAction_upload" enctype="multipart/form-data">
+	<%--隐藏字段 --%>
+	<s:hidden name="classId" value="%{classId}"></s:hidden>
 	<table width="88%" border="0" class="emp_table" style="width:80%;">
 	  <tr>
 	    <td width="120">课程类别：</td>
-	    <td>java基础 </td>
+	    <td><s:property value="courseType.courseName"/> </td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td>班级：</td>
-	    <td>1期 </td>
+	    <td><s:property value="name"/></td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
 	    <td>上次上传时间：</td>
-	    <td>2015-04-02 </td>
+	    <td><s:date format="yyyy-MM-dd" name="uploadTime" /> </td>
 	    <td>&nbsp;</td>
 	  </tr>
 	  <tr>
@@ -60,7 +63,7 @@
 	    </td>
 	  </tr>
 	</table>
-</form>
+</s:form>
 
 </body>
 </html>

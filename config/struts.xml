@@ -15,6 +15,10 @@
 		<interceptors>
 			<interceptor name="loginIntercepter" class="com.cain.crm.web.interceptor.LoginInterceptor"></interceptor>
 			<interceptor-stack name="loginStack">
+			
+			<interceptor-ref name="defaultStack">
+					<param name="fileUpload.allowedExtensions">.xls,.xlsx</param>
+				</interceptor-ref>
 				<interceptor-ref name="defaultStack"></interceptor-ref>
 				<interceptor-ref name="loginIntercepter">
 					<param name="excludeMethods">login</param>

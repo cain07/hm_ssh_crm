@@ -2,6 +2,7 @@ package com.cain.crm.utils;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
+import java.util.UUID;
 
 public class MyStringUtils {
 	
@@ -32,6 +33,14 @@ public class MyStringUtils {
 	
 	public static void main(String[] args) {
 		System.out.println(getMD5Value("1234"));
+	}
+	
+	/**
+	 * 获得一个32长度的UUID值 
+	 * @return
+	 */
+	public static String getUUID(){
+		return UUID.randomUUID().toString().replace("-", "");
 	}
 
 }

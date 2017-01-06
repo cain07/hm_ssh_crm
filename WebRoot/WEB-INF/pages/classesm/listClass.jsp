@@ -81,9 +81,12 @@
 		<td align="center">
 	    	<a href="${pageContext.request.contextPath}/pages/classesm/showClass.jsp"><img src="${pageContext.request.contextPath}/images/button/modify.gif" class="img"/></a>
 		</td>
-		<td align="center" title="上次上传时间：<s:date format="yyyy-MM-dd" name="uploadTime" />">   
-			<a href="${pageContext.request.contextPath}/pages/classesm/uploadClass.jsp">上传</a>
-			<a href="${pageContext.request.contextPath}/pages/classesm/downloadClass">下载</a> <br/>
+		<td align="center" title="上次上传时间：<s:date format="yyyy-MM-dd" name="uploadTime" />"> 
+		<s:a action="classesAction_editUI" namespace="/">  
+		<s:param name="classId" value="classId"></s:param>
+			上传</a>
+			下载</a> <br/>
+			</s:a>
 		</td>
 	  </tr>
   </s:iterator>
