@@ -8,29 +8,18 @@ import net.sf.json.JsonConfig;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.cain.crm.base.BaseAction;
 import com.cain.crm.post.domain.CrmPost;
-import com.cain.crm.post.service.PostService;
-import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 
-public class PostAction extends ActionSupport implements ModelDriven<CrmPost>{
+public class PostAction extends BaseAction<CrmPost>{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8228668399933127622L;
 
-	private CrmPost post = new CrmPost();
-
-	@Override
-	public CrmPost getModel() {
-		// TODO Auto-generated method stub
-		return post ;
-	}
-	
-	private PostService postService;
-	
-	public void setPostService(PostService postService) {
-		this.postService = postService;
-	}
-	
 	public String findAllPostWithDepartment() throws IOException{
-		List<CrmPost> crmPosts = postService.findAll(post.getDepartment());
+		List<CrmPost> crmPosts = this.getPostService().findAll(this.getModel().getDepartment());
 		
 		JsonConfig jsonConfig = new JsonConfig();
 		jsonConfig.setExcludes(new String[]{"department","staffSet"});
